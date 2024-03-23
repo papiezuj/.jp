@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    #meme-container {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    #meme-image {
+      width: 500px;
+	  height:500px;
+      border: 1px solid #ccc;
+    }
+
+    #text-input-top,
+    #text-input-bottom {
+      width: 80%;
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+
+    #generate-btn,
+    #save-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #image-input {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meme Generator</h1>
+
+  <div id="meme-container">
+    <img	id="meme-image" alt="Meme Image" src="https://m.natemat.pl/70f255af6b2768378de86254a5593c3c,948,0,0,0.webp">Dodaj zdjęcie aby zaczynać</p>
+    <canvas id="meme-canvas" style="position: absolute; top: 0; left: 0;"></canvas>
+  </div>
+
+  <label for="image-input">Dodaj własne zdjęcie:</label>
+  <input type="file" id="image-input" accept="image/*" onchange="loadImage(this)">
+
+  <input type="text" id="text-input-top" placeholder="Tekst na górze">
+  <input type="text" id="text-input-bottom" placeholder="Tekst na dole">
+
+  <button id="generate-btn" onclick="generateMeme()">Kliknij aby dodać tekst</button>
+  <button id="save-btn" onclick="saveMeme()">Zapisz</button>
+  <label for="font-family-input">Czcionka:</label>
+  <select id="font-family-input">
+    <option value="Arial">Arial</option>
+    <option value="Comic Sans MS">Comic Sans MS</option>
+    <option value="Impact">Impact</option>
+    <!-- Add more font options as needed -->
+  </select>
+   <label for="font-size-input">Rozmiar czcionki:</label>
+  <input type="number" id="font-size-input" value="30" min="10" max="999">
+
+
+  <label for="color-input">Kolor:</label>
+  <input type="color" id="color-input" value="#ffffff">
+
+
+  <script>
+ function generateMeme() {
+      var canvas = document.getElementById("meme-canvas");
+      var ctx = canvas.getContext("2d");
+
+      var topText = document.getElementById("text-input-top").value;
+      var bottomText = document.getElementById("text-input-bottom").value;
+      var fontFamily = document.getElementById("font-family-input").value;
+      var fontSize = parseInt(document.getElementById("font-size-input").value, 10);
+      var textColor = document.getElementById("color-input").value;
+
+      var image = new Image();
+      image.src = document.getElementById("meme-image").src;
+
+      image.onload = function() {
+        canvas.width = image.width;
+        canvas.height = image.height;
+
+        ctx.drawImage(image, 0, 0, image.width, image.height);
+
+        ctx.fillStyle = textColor;
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 5;
+        ctx.font = fontSize + "px " + fontFamily;
+        ctx.textAlign = "center";
+
+        // Top text
+        ctx.fillText(topText, canvas.width / 2, 40);
+        ctx.strokeText(topText, canvas.width / 2, 40);
+
+        // Bottom text
+        ctx.fillText(bottomText, canvas.width / 2, canvas.height - 20);
+        ctx.strokeText(bottomText, canvas.width / 2, canvas.height - 20);
+      };
+    }
+
+    function saveMeme() {
+      var canvas = document.getElementById("meme-canvas");
+      var dataURL = canvas.toDataURL("image/png");
+      var link = document.createElement("a");
+      link.href = dataURL;
+      link.download = "meme.png";
+      link.click();
+    }
+
+    function loadImage(input) {
+      var file = input.files[0];
+
+      if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById("meme-image").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
+</html>
+  </script>
+</body>
+</html>
+
+
+<style>
+button{
+  background-color: black;
+  background-image: linear-gradient(-180deg, gray, black);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  overflow: hidden;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+}
+
+button{
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+body{
+color: orange;
+}
+</style>
+<script>
+function zolty(){
+document.body.style.backgroundColor = "yellow"
+}
+</script>
+</body>
+</html>

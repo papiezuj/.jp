@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World!</title>
+</head>
+<body bgcolor="#120a40">
+<center><h1 style="color:orange;">Opis</h1></center>
+<div class="menu">
+<p><center><a href=""><button>Strona Główna</button></a> <button>Memy</button></a> <button>Video</button></a> <button>Opis</button></a> <button>Kontakt</button></a> <button>Socjalmedia</button></a></center> <span onclick="zolty()" style="background-color:yellow;">Żółty Motyw</span></p>
+</div>
+<div class="opis" style="color: orange;">
+<p>Witam na stronie!</p>
+<p>W której znajdują się różne memy o papieżu filmy itp.</p>
+<p>Napewno znajdziesz coś dla siebie</p>
+<p>Oraz nowe memy których jeszcze nie widziałeś i których nie od zobaczysz</p>
+<p>Dziennie 20 nowych memów!!!!!!!!!</p>
+</div>
+<style>
+button{
+  background-color: black;
+  background-image: linear-gradient(-180deg, gray, black);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+}
+
+button{
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+</style>
+<script>
+function zolty(){
+document.body.style.backgroundColor = "yellow"
+}
+</script>
+</body>
+</html>

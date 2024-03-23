@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP Simulator</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #taskbar {
+            background-color: #1A1A1A;
+            color: #ffffff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 5px;
+            box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #start-button {
+            background-color: #4F4F4F;
+            color: #ffffff;
+            padding: 3px 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #desktop {
+            background: url('https://placekitten.com/800/600') center/cover;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #start-menu {
+            display: none;
+            position: fixed;
+            bottom: 35px;
+            left: 10px;
+            width: 200px;
+            background-color: #1A1A1A;
+            padding: 10px;
+            border: 1px solid #4F4F4F;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .start-menu-item {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            padding: 5px;
+            margin-bottom: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .start-menu-item:hover {
+            background-color: #4F4F4F;
+        }
+    </style>
+</head>
+<body>
+
+<div id="desktop"></div>
+
+<div id="taskbar">
+    <button id="start-button">Start</button>
+    <div id="start-menu">
+        <a href="#" class="start-menu-item">My Computer</a>
+        <a href="#" class="start-menu-item">My Documents</a>
+        <a href="#" class="start-menu-item">Control Panel</a>
+        <a href="#" class="start-menu-item">Shutdown</a>
+    </div>
+</div>
+
+<script>
+    const startButton = document.getElementById('start-button');
+    const startMenu = document.getElementById('start-menu');
+
+    startButton.addEventListener('click', () => {
+        startMenu.style.display = (startMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', (event) => {
+        const targetElement = event.target;
+        if (!startButton.contains(targetElement) && !startMenu.contains(targetElement)) {
+            startMenu.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papieżuj.pl</title>
+</head>
+<body bgcolor="#120a40">
+<body color="orange">
+<div class="menu">
+<center><img src="logo.png" width="400" height="120"></img></center>
+<p><center><a href=""><button>Strona Główna</button></a> <a href="memy.html"><button>Memy</button></a> <a href="video.html"><button>Video</button></a> <a href=""><button>Opis</button></a> <a href=""><button>Kontakt</button></a>  <button>Gry</button></a> <button>Twórcy strony</button> <button class="vip"><b style="background-color:black; color:gold;">Kup stronę VIP</b></button> <button>Deklaracja Administracji</button> </center> <span onclick="zolty()" style="background-color:yellow;">Żółty Motyw</span></p>
+</div>
+<div class="info_meme">
+<center><p><h1>Aktualności</h1></p></center>
+<p>Nowe memy: 0</p>
+<p>Nowe gry: 0</p>
+<p>Nowe Video: 0</p>
+</div>
+<style>
+.info_meme{
+
+font-family: consolas;
+
+
+}
+
+</style>
+<p></p>
+<style>
+button{
+  background-color: black;
+  background-image: linear-gradient(-180deg, gray, black);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+}
+
+button{
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+body{
+color: orange;
+}
+</style>
+<style>
+.vip{
+	background: conic-gradient(
+		from 45deg,
+		#a87a03 0,
+		#d9a930 90deg,
+		#ebc157 90deg,
+		#785600 180deg,
+		#fad169 180deg
+	);
+	background-size: 1em 1em;
+	color: black;
+	font-family: Times New Roman;
+}
+</style>
+<script>
+function zolty(){
+document.body.style.backgroundColor = "yellow"
+}
+</script>
+</body>
+</html>
